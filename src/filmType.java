@@ -1,5 +1,5 @@
 
-public enum filmType {
+public enum FilmType {
 
-	Commedy,Thriller,Cartoon,Drama
+	COMMEDY,THRILLER,CARTOON,DRAMA;
 }

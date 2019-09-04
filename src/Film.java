@@ -1,20 +1,46 @@
 import java.util.List;
 
 public class Film implements IFilm{
-
-	@Override
-	public void getQualityString() {
+	
+	
+	public String getQualityString() {
 		// TODO Auto-generated method stub
-		
+		switch(quality) {
+		case 0:
+		case 1:
+			return "Really Bad";
+		case 2:
+		case 3:
+			return "Bad";
+		case 4:
+		case 5:
+		case 6:
+			return "Normal";
+		case 7:
+		case 8:
+			return"Good";
+		case 9:
+		case 10:
+			return"Excelent";
+			
+			default:
+				return "Undifined";
+		}
 	}
+	
+	
+	public String toString() {
+		return "<"+title+" "+ year+" "+quality+" "+director+" CAST:"+ cast+" "+ filmtype+">";
+	}
+	
 	String title;
 	int year;
 	int quality;
 	Director director;
-	List[] cast;
-	String filmtype;
+	List<Actor> cast;
+	FilmType filmtype;
 	
-	public Film(String title, int year, int quality, Director director, List[] cast, String filmtype) {
+	public Film(String title, int year, int quality, Director director, List<Actor> cast, FilmType filmtype) {
 		super();
 		this.title = title;
 		this.year = year;
@@ -56,22 +82,20 @@ public class Film implements IFilm{
 		this.director = director;
 	}
 
-	public List[] getCast() {
+	public List<Actor> getCast() {
 		return cast;
 	}
 
-	public void setCast(List[] cast) {
+	public void setCast(List<Actor> cast) {
 		this.cast = cast;
 	}
 
-	public String getFilmtype() {
+	public FilmType getFilmtype() {
 		return filmtype;
 	}
 
-	public void setFilmtype(String filmtype) {
+	public void setFilmtype(FilmType filmtype) {
 		this.filmtype = filmtype;
 	}
-	
-	
-	
+
 }
