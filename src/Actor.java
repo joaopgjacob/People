@@ -1,13 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Actor extends People{
 
-	/*enum tipoActor{
-		Main,Supporting,Stuntman;
-	}*/
+	
 	int tipoActor;
-	List oscarNominations;
+	int[] oscarNominations;
 	
 	
 	public Actor() {
@@ -15,9 +14,10 @@ public class Actor extends People{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Actor(String name, String surname, int age,int tipoActor) {
+	public Actor(String name, String surname, int age,int tipoActor, int[] oscarNominations) {
 		super(name, surname, age);
 		this.tipoActor=tipoActor;
+		this.oscarNominations=oscarNominations;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -34,14 +34,18 @@ public class Actor extends People{
 		}
 		else {return "Undefined";}
 	}
+	
 
 	public void setTipoActor(int tipoActor) {
 		this.tipoActor = tipoActor;
 	}
 
-	
-	
-	
-	
+	public int[] getOscarNominations() {
+		return oscarNominations;
+	}
+
+	public void setOscarNominations(int[] oscarNominations) {
+		this.oscarNominations = oscarNominations;
+	}
 	
 }
