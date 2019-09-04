@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Film implements IFilm{
+public class Film implements Comparable<Film>, IFilm{
 	
 	
 	public String getQualityString() {
@@ -96,6 +96,12 @@ public class Film implements IFilm{
 
 	public void setFilmtype(FilmType filmtype) {
 		this.filmtype = filmtype;
+	}
+
+
+	@Override
+	public int compareTo(Film o) {
+		 return Integer.compare(quality, o.quality);
 	}
 
 }

@@ -1,6 +1,6 @@
 import java.util.Date;
 
-public class People {
+public class People implements Comparable<People>{
 
 	private String name;
 	private String surname;
@@ -41,6 +41,12 @@ public class People {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	@Override
+	public int compareTo(People o) {
+
+		 return Integer.compare(age, o.age);
 	}
 
 }

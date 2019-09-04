@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -22,7 +23,10 @@ public class Main {
 		
 		Director director1= new Director("jane","juuby",43,"Paramont",moviesbyjane);
 		
+		
+		
 		List<Actor>shrek4actors=new ArrayList<Actor>();
+		
 		
 		shrek4actors.add(actor1);
 		shrek4actors.add(actor2);
@@ -34,12 +38,27 @@ public class Main {
 		Film film3=new Film("Film3", 2211, 6, director1, shrek4actors, FilmType.THRILLER);
 		Film film4=new Film("Film4", 1890, 3, director1, shrek4actors, FilmType.CARTOON);
 		
+		
+		
+		List<Film> filmsforuser=new ArrayList<Film>();
+		filmsforuser.add(shrek4);
+		
+		User user1=new User("userguy","lastnameguy",87,6,filmsforuser,"username420");
+		
+		
 		List<Film> l = new ArrayList<Film>();
 		l.add(film1);
 		l.add(film2);
 		l.add(film3);
 		l.add(film4);
 		l.add(shrek4);
+		
+		List<People>
+		
+		Collections.sort(l);
+		
+		
+		
 		for(int i=0;i<l.size();i++)
 			{
 				System.out.println(l.get(i).toString());
