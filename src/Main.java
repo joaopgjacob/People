@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -64,11 +66,23 @@ public class Main {
 		List<Film> filmsforuser=new ArrayList<Film>();
 		filmsforuser.add(shrek4);
 		
-		User user1=new User("userguy1","lastnameguy1",53,6,filmsforuser,"username421");
-		User user2=new User("userguy2","lastnameguy2",22,7,filmsforuser,"username422");
-		User user3=new User("userguy3","lastnameguy3",12,8,filmsforuser,"username423");
+		Map<String, Integer> user1rating = new HashMap<>();
+		Map<String, Integer> user2rating = new HashMap<>();
+		Map<String, Integer> user3rating = new HashMap<>();
+		
+		user1rating.put("Amazonia", 7);
+		user1rating.put("Amazonia 2", 3);
+		user2rating.put("Amazonia The return", 5);
+		user2rating.put("Amazonia The revenge", 8);
+		user3rating.put("Amazonia The return of Juarez", 10);
 		
 		
+		
+		User user1=new User("userguy1","lastnameguy1",53,user1rating,filmsforuser,"username421");
+		User user2=new User("userguy2","lastnameguy2",22,user2rating,filmsforuser,"username422");
+		User user3=new User("userguy3","lastnameguy3",12,user3rating,filmsforuser,"username423");
+		
+		User u = new User();
 		List<Film> l = new ArrayList<Film>();
 		l.add(film1);
 		l.add(film2);

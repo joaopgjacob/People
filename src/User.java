@@ -1,10 +1,11 @@
 import java.util.List;
+import java.util.Map;
 
 
 
 public class User extends People implements IUser{
 
-	int rating;
+	Map<String,Integer> rating;
 	List<Film> watchedFilms;
 	String username;
 	
@@ -35,7 +36,7 @@ public class User extends People implements IUser{
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String name, String surname, int age, int rating, List<Film> watchedFilms, String username) {
+	public User(String name, String surname, int age, Map<String, Integer> rating, List<Film> watchedFilms, String username) {
 		super(name, surname, age);
 		this.rating = rating;
 		this.watchedFilms = watchedFilms;
@@ -67,16 +68,14 @@ public class User extends People implements IUser{
 			return false;
 		return true;
 	}
-	
-	
 
 
-	public int getRating() {
+	public Map<String, Integer> getRating() {
 		return rating;
 	}
 
 
-	public void setRating(int rating) {
+	public void setRating(Map<String, Integer> rating) {
 		this.rating = rating;
 	}
 
