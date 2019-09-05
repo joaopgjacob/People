@@ -10,6 +10,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		//years that actors won oscars
 		int[] years1=new int[2];
 		years1[0]=1234;
 		years1[1]=1998;
@@ -22,6 +23,7 @@ public class Main {
 		years3[1]=2003;
 		years3[2]=2010;
 		
+		//creating actors
 		Actor actor1= new Actor("jonh","smith",32, TypeActor.MAIN,years1);
 		Actor actor2= new Actor("jonhy","smithy",39, TypeActor.STUNTMAN,years2);
 		
@@ -29,6 +31,7 @@ public class Main {
 		Actor actor4= new Actor("Fabio","Rogery",86, TypeActor.SUPPORT,null);
 		Actor actor5= new Actor("Broklin","ninenine",55, TypeActor.SUPPORT,null);
 		
+		//lists to give directos for Filmografia
 		List<String>moviesbyjane=new ArrayList<String>();
 		
 		moviesbyjane.add("shrek");
@@ -41,11 +44,11 @@ public class Main {
 		moviesbylola.add("gunshow");
 		moviesbylola.add("joker");
 		
-		
+		//creating directors
 		Director director1= new Director("jane","juuby",43,"Paramont",moviesbyjane);
 		Director director2= new Director("lola","bunny",83,"Disney",moviesbyjane);
 		
-		
+		//creating casts for the films
 		List<Actor>shrek4actors=new ArrayList<Actor>();
 		shrek4actors.add(actor1);
 		shrek4actors.add(actor2);
@@ -55,6 +58,7 @@ public class Main {
 		actors.add(actor4);
 		actors.add(actor5);
 		
+		//creating films
 		Film shrek4=new Film("Shrek 4", 2020, 10, director2, shrek4actors, FilmType.DRAMA);
 		Film film1=new Film("Film1", 2024, 3, director1, shrek4actors, FilmType.COMMEDY);
 		Film film2=new Film("Film2", 2012, 2, director1, actors, FilmType.THRILLER);
@@ -62,10 +66,12 @@ public class Main {
 		Film film4=new Film("Film4", 1890, 3, director1, actors, FilmType.CARTOON);
 		
 		
-		
+		//creating a list for the users for the watched films
 		List<Film> filmsforuser=new ArrayList<Film>();
 		filmsforuser.add(shrek4);
 		
+		
+		//creating map for user ratings
 		Map<String, Integer> user1rating = new HashMap<>();
 		Map<String, Integer> user2rating = new HashMap<>();
 		Map<String, Integer> user3rating = new HashMap<>();
@@ -76,13 +82,15 @@ public class Main {
 		user2rating.put("Amazonia The revenge", 8);
 		user3rating.put("Amazonia The return of Juarez", 10);
 		
-		
-		
+		//creating user
 		User user1=new User("userguy1","lastnameguy1",53,user1rating,filmsforuser,"username421");
 		User user2=new User("userguy2","lastnameguy2",22,user2rating,filmsforuser,"username422");
 		User user3=new User("userguy3","lastnameguy3",12,user3rating,filmsforuser,"username423");
 		
+		//Julio example of something
 		User u = new User();
+		
+		//list of films
 		List<Film> l = new ArrayList<Film>();
 		l.add(film1);
 		l.add(film2);
@@ -90,6 +98,7 @@ public class Main {
 		l.add(film4);
 		l.add(shrek4);
 		
+		//list of people
 		List<People> peop= new ArrayList<People>();
 		
 		peop.add(director1);
@@ -103,26 +112,37 @@ public class Main {
 		peop.add(user2);
 		peop.add(user3);
 		
-		
+		//sorting the film and peop list
 		Collections.sort(l);
 		
 		Collections.sort(peop);
 		
+		
+		//print films
 		for(int i=0;i<l.size();i++)
 			{
 				System.out.println(l.get(i).toString());
-				
-				
 			}
 		
+		//creating an actor list to sort the oscar stuff
 		
-		/*
-		System.out.println(film3.title);
-		System.out.println(film3.year);
-		System.out.println(film3.quality);
-		System.out.println(film3.director);
-		System.out.println(film3.cast);
-		System.out.println(film3.filmtype);
-		*/
+		List<Actor> allActors= new ArrayList<Actor>();
+		allActors.add(actor1);
+		allActors.add(actor2);
+		allActors.add(actor3);
+		allActors.add(actor4);
+		allActors.add(actor5);
+		
+		List<Actor> actuallyGoodActors= new ArrayList<Actor>();
+		
+		for(int i=0;i<allActors.size();i++) {
+			
+			if(allActors.get(i).getOscarNominations()!=null) {
+				
+				actuallyGoodActors.add(allActors.get(i));
+				
+			}
+		}	
+		
 	}
 }
