@@ -87,8 +87,8 @@ public class Main {
 		User user2=new User("userguy2","lastnameguy2",22,user2rating,filmsforuser,"username422");
 		User user3=new User("userguy3","lastnameguy3",12,user3rating,filmsforuser,"username423");
 		
-		//Julio example of something
-		User u = new User();
+		// julio example of something
+		//User u = new User();
 		
 		//list of films
 		List<Film> l = new ArrayList<Film>();

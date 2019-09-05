@@ -11,23 +11,21 @@ public class User extends People implements IUser{
 	
 	
 	@Override
-	public Double getAverageRating() throws NoRatedFilmsException {
-		// TODO Auto-generated method stub
-		try {
-		double rating=0;
-		for(int i=0;i<watchedFilms.size();i++)
-		{
-			double x=watchedFilms.get(i).getQuality();
-			
-			rating =rating+x;
+	public Double getAverageRating() throws NoRatedFilmsException{
+		double averageRating = 0;
+		if (rating != null && !rating.isEmpty()) {
+			int entradas = rating.size();
+			double soma = 0;
+			for (Integer value : rating.values()) {
+				soma = soma + value;
+			}
+
+			averageRating = soma / entradas;
+
+		} else {
+			 throw new NoRatedFilmsException();
 		}
-		
-		double averagerating=rating/watchedFilms.size();
-		return averagerating;
-		}
-		catch(Exception e) {
-			throw new NoRatedFilmsException(e);
-		}
+		return averageRating;
 	}
 	
 

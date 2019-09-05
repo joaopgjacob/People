@@ -1,9 +1,9 @@
 
 public class NoRatedFilmsException extends Exception {
 
-	public NoRatedFilmsException(Exception e) {
+	public NoRatedFilmsException() {
 		// TODO Auto-generated constructor stub
-		e.printStackTrace();
+		printStackTrace();
 	}
 	
 }
